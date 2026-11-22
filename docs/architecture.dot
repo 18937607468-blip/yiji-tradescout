@@ -1,0 +1,32 @@
+digraph TradeScout {
+  graph [rankdir=TB, bgcolor="#f8fafb", pad="0.5", nodesep="0.5", ranksep="0.55", splines=polyline, fontname="Noto Sans CJK SC", fontsize=26, fontcolor="#193e50", labelloc=t, label="冠英 TradeScout · 实际技术架构\n精准获客 → 有依据的询价处理 → 可追溯跟进"];
+  node [shape=box, style="rounded,filled", fontname="Noto Sans CJK SC", fontsize=16, color="#d2e0e5", penwidth=1.3, fillcolor="#ffffff", fontcolor="#294e60", margin="0.23,0.18"];
+  edge [color="#7794a0", penwidth=1.5, arrowsize=0.7, fontname="Noto Sans CJK SC", fontsize=12, fontcolor="#597684"];
+
+  ui [label="网页工作台 · React / Vinext\n精准获客 ｜ 客户记录 ｜ 询价配型 ｜ 跟进", fillcolor="#e9f4f1", color="#75a99c", penwidth=1.8];
+  api [label="Cloudflare Worker API\n输入校验 · 账号隔离 · 版本检查", fillcolor="#eef5f9", color="#a0becd"];
+  search [label="公开获客与官网核验\nTavily 搜索 + 公开网页读取\n产品、企业角色、明确联系入口", fillcolor="#eef7f2", color="#8fb7a3"];
+  model [label="模型文本任务 · B1X\n官网研究 / 询价提取 / 财报提取\n请求：deepseek-v4.1-flash-1017", fillcolor="#f2eff9", color="#b0a3cd"];
+  evidence [label="证据与输出校验\n原句 quote + sourceId + URL + 时间\n模型输出先通过结构与引用检查", fillcolor="#fff8e9", color="#d7bd82"];
+  rules [label="确定性业务规则\n角色与产品核验 · 条件配型 · 原值单位转换\n材料公式 · 承诺校验 · 人工记忆差异确认", fillcolor="#edf5fa", color="#8cacc1", penwidth=1.7];
+  db [shape=cylinder, label="Cloudflare D1\n客户 · 来源 · 询价 · 核算历史 · 跟进 · 运行记录\n按账号隔离；版本冲突拒绝覆盖", fillcolor="#e7f1f1", color="#6d9c9c", penwidth=1.8];
+  keys [label="账号模型配置\nAES-GCM 加密\n读接口不返回 Key", fillcolor="#f5f3f8", color="#c5bbd3", fontsize=14];
+  manual [label="授权材料入口\n海关 CSV / TSV\n社媒文字与截图存证\n转单云会话外链", fontsize=14];
+  note [shape=note, label="如实展示的边界\n图片 OCR、社媒私信同步、MemEdge / 图数据库未接入\n核算金额是材料参考；目录目前覆盖 8 条来源样本\n接口已接入 ≠ 本轮已完成真实 B1X 业务验收", fontsize=13, fillcolor="#fbf8f3", color="#d7c8b3"];
+
+  ui [group=spine]; api [group=spine]; model [group=spine]; evidence [group=spine]; rules [group=spine]; db [group=spine]; note [group=spine];
+  ui -> api [dir=both, label="请求与结果", weight=100];
+  manual -> api [label="人工导入"];
+  api -> search;
+  api -> model [weight=100];
+  api -> rules [label="结构化输入", color="#9bb2bd", weight=0];
+  keys -> model [style=dashed, label="服务端读取", constraint=false];
+  search -> evidence [label="实际网页原文"];
+  model -> evidence [label="字段与原句引用", weight=100];
+  evidence -> rules [weight=100];
+  rules -> db [dir=both, label="读取 / 保存 / 回看", weight=100];
+  db -> note [style=invis, weight=100];
+  search -> model -> keys [style=invis, weight=10];
+  { rank=same; ui; manual; }
+  { rank=same; search; model; keys; }
+}

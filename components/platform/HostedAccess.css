@@ -1,0 +1,48 @@
+.ts-hosted-model{min-width:0}
+.ts-hosted-model .ts-button{font-size:14px!important;min-height:39px}
+.ts-model-state{display:flex;align-items:flex-start;gap:10px;padding:12px 13px;border:1px solid #e2dfce;border-radius:8px;background:#fcfaf4;color:#8c7546}
+.ts-model-state.is-verified{border-color:#cfe2d9;background:#f1f8f4;color:#3d8066}
+.ts-model-state>span{display:flex;margin-top:3px;flex-shrink:0}
+.ts-model-state>div{flex:1;min-width:0}
+.ts-model-state strong{display:block;font-size:15px;font-weight:550;color:#416478;line-height:1.6}
+.ts-model-state p{font-size:14px;color:#71818c;line-height:1.7;margin-top:3px}
+.ts-model-state .ts-button{padding:5px;min-width:31px;min-height:31px}
+.ts-model-requested{display:flex;flex-direction:column;gap:4px;margin-top:12px;font-size:14px;color:#65818f;line-height:1.75}
+.ts-model-requested code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:14px;color:#315d6f;overflow-wrap:anywhere;margin-left:5px}
+.ts-hosted-model .ts-field{font-size:14px}
+.ts-hosted-model .ts-field input{font-size:15px}
+.ts-hosted-model .ts-form-note{font-size:14px;line-height:1.8;margin-top:8px}
+.ts-model-actions{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-top:13px}
+.ts-model-help{font-size:14px;color:#887343;line-height:1.8;margin-top:8px}
+.ts-model-status-error{font-size:14px;color:#a15342;display:flex;gap:7px;align-items:flex-start;margin-top:12px;line-height:1.8}
+.ts-model-status-error svg{flex-shrink:0;margin-top:4px}
+.ts-model-usage{margin-top:20px;padding:15px;border:1px solid #dce6eb;border-radius:8px;background:#f7fafb}
+.ts-model-usage-title{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.ts-hosted-model .ts-model-usage-title h3{display:flex;align-items:center;gap:7px;font-size:15px;font-weight:550;color:#426878;margin:0}
+.ts-model-usage-title>span{font-size:14px;color:#7b8f9a}
+.ts-model-usage-count{display:flex;align-items:baseline;gap:9px;margin:10px 0 8px;color:#5f7e8c}
+.ts-model-usage-count strong{font-size:28px;line-height:1.3;font-weight:600;color:#275f67}
+.ts-model-usage-count>span{font-size:14px}
+.ts-model-usage p{font-size:14px;color:#6f8792;line-height:1.8;margin-top:3px}
+.ts-model-attempt{margin-top:16px;border-top:1px solid #e0e9eb;padding-top:12px}
+.ts-model-attempt>summary{display:flex;align-items:center;gap:7px;flex-wrap:wrap;list-style:none;font-size:14px;color:#397264;cursor:pointer;line-height:1.8}
+.ts-model-attempt>summary>span{margin-left:auto;color:#789187;font-size:14px}
+.ts-model-attempt>summary::-webkit-details-marker{display:none}
+.ts-model-call-details{margin-top:11px;font-size:14px;color:#496c7d;min-width:0}
+.ts-model-call-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px 16px;margin:0}
+.ts-model-call-grid>div{min-width:0}
+.ts-model-call-details dt{font-size:14px;color:#7b909c;font-weight:400;line-height:1.6}
+.ts-model-call-details dd{font-size:14px;color:#3d6476;margin:3px 0 0;line-height:1.75;overflow-wrap:anywhere}
+.ts-model-call-details code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:14px;overflow-wrap:anywhere;white-space:pre-wrap}
+.ts-model-token-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid #dfe8eb;background:#f8fafb;border-radius:6px;margin:13px 0;overflow:hidden}
+.ts-model-token-grid>div{padding:10px 9px;min-width:0}
+.ts-model-token-grid>div+div{border-left:1px solid #e1e9eb}
+.ts-model-token-grid span{display:block;font-size:14px;color:#78919c}
+.ts-model-call-details .ts-model-token-grid strong{display:block;font-size:14px;color:#2d6d68;font-weight:550;line-height:1.8;margin-top:4px;overflow-wrap:anywhere}
+.ts-model-call-ids{display:flex;flex-direction:column;gap:8px;border-top:1px solid #e4ebed;padding-top:11px;margin:0}
+.ts-model-call-ids>div{display:grid;grid-template-columns:78px minmax(0,1fr);gap:9px;align-items:start}
+.ts-model-call-ids dd{margin-top:0}
+.ts-run-model-details{margin-top:9px;border:1px solid #dbe5e8;border-radius:6px;background:#fff;overflow:hidden}
+.ts-run-log .ts-run-model-details>summary{font-size:14px;color:#487b70;padding:9px 12px;border:0}
+.ts-run-model-details>.ts-model-call-details{padding:2px 12px 13px;margin:0}
+@media(max-width:600px){.ts-model-actions{align-items:stretch}.ts-model-actions .ts-button{white-space:normal}.ts-model-state{padding:11px}.ts-model-usage{padding:12px}.ts-model-call-grid{gap:10px}.ts-model-token-grid>div{padding:8px 6px}.ts-model-attempt>summary>span{margin-left:0;width:100%;padding-left:23px}.ts-model-call-ids>div{grid-template-columns:66px minmax(0,1fr);gap:7px}}

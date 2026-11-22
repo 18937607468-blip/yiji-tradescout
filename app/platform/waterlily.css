@@ -1,0 +1,346 @@
+/* 投石问路 — a quiet watercolour layer over the existing business workspace. */
+.ts-app.ts-waterlily {
+  --ts-canvas: #f5f3ea;
+  --ts-paper: #fffdf7;
+  --ts-primary: #355e52;
+  --ts-sage: #afc8bc;
+  --ts-mist: #b5c8d5;
+  --ts-lilac: #c5bcd3;
+  --ts-apricot: #d6a98c;
+  --ts-ink: #283832;
+  --ts-muted: #5a6b60;
+  --ts-line: #dfe5db;
+  --ts-navy: var(--ts-ink);
+  --ts-teal: var(--ts-primary);
+  --ts-teal-light: #e7eee4;
+  --ts-bg: var(--ts-canvas);
+  --ts-serif: "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", "STSong", "SimSun", Georgia, serif;
+  --ts-shadow: 0 3px 14px #334d3e05, 0 1px 2px #334d3e04;
+  --ts-radius: 16px;
+  color-scheme: light;
+  background: var(--ts-canvas);
+  color: var(--ts-ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+}
+.ts-waterlily [hidden] { display: none !important; }
+.ts-waterlily input, .ts-waterlily select, .ts-waterlily textarea,
+.ts-waterlily time, .ts-waterlily code { font-variant-numeric: tabular-nums; }
+.ts-waterlily button, .ts-waterlily a { touch-action: manipulation; }
+.ts-waterlily button:focus-visible, .ts-waterlily a:focus-visible,
+.ts-waterlily summary:focus-visible {
+  outline: 3px solid #6c9484;
+  outline-offset: 3px;
+}
+.ts-waterlily input:focus-visible, .ts-waterlily select:focus-visible,
+.ts-waterlily textarea:focus-visible {
+  border-color: #648a7c !important;
+  outline: 2px solid #a3bfb1 !important;
+  box-shadow: 0 0 0 4px #afc8bc30 !important;
+}
+.ts-waterlily .ts-sidebar {
+  width: 216px;
+  padding: 26px 16px 16px;
+  border-right: 1px solid #d6ded2;
+  background: linear-gradient(178deg, #f5f5eb 0%, #eff2e8 68%, #e6ece2 100%);
+}
+.ts-waterlily .ts-brand {
+  background: none;
+  border: 0;
+  text-align: left;
+  width: 100%;
+  padding: 0 4px 30px;
+  gap: 10px;
+}
+.ts-waterlily .ts-brand-icon {
+  width: 44px;
+  height: 48px;
+  color: var(--ts-primary);
+  background: transparent;
+  border: 1px solid #b2c4b5;
+  border-radius: 15px 15px 20px 20px;
+}
+.ts-waterlily .ts-brand-icon svg { width: 39px; height: 39px; }
+.ts-waterlily .ts-brand strong {
+  font-family: var(--ts-serif);
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+.ts-waterlily .ts-brand small { color: var(--ts-muted); font-size: 11px; letter-spacing: .7px; }
+.ts-waterlily .ts-workspace-label { color: #707e6f; font-size: 11px; letter-spacing: 1.8px; }
+.ts-waterlily .ts-sidebar nav { gap: 6px; }
+.ts-waterlily .ts-sidebar nav button { height: 44px; color: var(--ts-muted); border-radius: 10px; font-size: 14px; }
+.ts-waterlily .ts-sidebar nav button:hover { background: #e4ebdf; color: var(--ts-primary); }
+.ts-waterlily .ts-sidebar nav button.active { background: var(--ts-primary); color: var(--ts-paper); box-shadow: 0 3px 7px #355e5216; }
+.ts-waterlily .ts-sidebar nav button.active b { color: var(--ts-paper); background: #ffffff20; }
+.ts-waterlily .ts-sidebar nav b { background: #dfe8db; color: var(--ts-primary); }
+.ts-waterlily .ts-sidebar-context { margin: 28px 5px 20px; padding: 24px 8px 0; color: var(--ts-muted); }
+.ts-waterlily .ts-sidebar-serial { display: block; color: #7b8779; font-size: 9px; letter-spacing: 1.7px; margin-bottom: 14px; }
+.ts-waterlily .ts-sidebar-context strong { font: 500 19px/1.7 var(--ts-serif); color: var(--ts-primary); }
+.ts-waterlily .ts-sidebar-context p { font-size: 12px; line-height: 2; color: #718171; margin-top: 14px; }
+.ts-waterlily .ts-sidebar-context > div { color: #607461; font-size: 11px; line-height: 1.7; }
+.ts-waterlily .ts-sidebar-settings-link { color: var(--ts-muted); }
+.ts-waterlily .ts-team { border-color: #d6dfd1; }
+.ts-waterlily .ts-team > span { background: #e2e8db; color: var(--ts-primary); font-family: var(--ts-serif); font-size: 20px; font-weight: 500; }
+.ts-waterlily .ts-team strong { color: var(--ts-ink); font-size: 12px; }
+.ts-waterlily .ts-team small { font-size: 11px; color: var(--ts-muted); }
+.ts-waterlily .ts-main-shell { margin-left: 216px; }
+.ts-waterlily .ts-topbar {
+  height: 56px;
+  padding: 0 32px;
+  background: #fffdf7e8;
+  backdrop-filter: blur(12px);
+  border-color: var(--ts-line);
+}
+.ts-waterlily .ts-breadcrumb, .ts-waterlily .ts-sync-state { color: var(--ts-muted); font-size: 12px; }
+.ts-waterlily .ts-breadcrumb strong { color: var(--ts-ink); }
+.ts-waterlily .ts-content { padding: 24px 32px 20px; max-width: 1660px; }
+.ts-waterlily .ts-page-heading { gap: 16px; align-items: center; margin-bottom: 18px; position: relative; }
+.ts-waterlily .ts-page-heading > div:first-child { min-width: 0; position: relative; }
+.ts-waterlily .ts-eyebrow { font-size: 10px; line-height: 1.4; letter-spacing: 2.2px; color: #6d7e6c; margin-bottom: 7px; position: relative; z-index: 1; }
+.ts-waterlily .ts-page-heading h1 { color: var(--ts-ink); font-size: 27px; font-weight: 600; letter-spacing: -.5px; }
+.ts-waterlily .ts-title-line { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px 24px; position: relative; z-index: 1; }
+.ts-waterlily .ts-brand-heading { min-height: 105px; }
+.ts-waterlily .ts-brand-heading h1 { font: 600 39px/1.35 var(--ts-serif); letter-spacing: 4px; }
+.ts-waterlily .ts-brand-tagline { font-family: var(--ts-serif); font-size: 17px; letter-spacing: .7px; color: #536f5d; }
+.ts-waterlily .ts-page-heading p { font-size: 13px; color: var(--ts-muted); margin-top: 8px; line-height: 1.7; position: relative; z-index: 1; }
+.ts-waterlily .ts-brand-ripples {
+  position: absolute;
+  pointer-events: none;
+  width: 465px;
+  height: 150px;
+  max-width: 100%;
+  left: -80px;
+  top: -26px;
+  color: #6f9683;
+  opacity: .2;
+  stroke-width: .9;
+  animation: ts-water-arrival 1.3s ease-out both;
+}
+.ts-waterlily .ts-workspace-status { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin: 0 0 20px; border-bottom: 1px solid var(--ts-line); padding: 0 0 13px; }
+.ts-waterlily .ts-access-bar { flex: 1; display: flex; align-items: center; flex-wrap: wrap; gap: 8px 10px; padding: 0; border: 0; background: none; border-radius: 0; margin: 0; min-width: 0; }
+.ts-waterlily .ts-access-icon { color: #6c8271; }
+.ts-waterlily .ts-access-icon svg { width: 15px; height: 15px; }
+.ts-waterlily .ts-access-bar > div { min-width: 0; flex: 1; display: flex; flex-wrap: wrap; gap: 2px 10px; align-items: baseline; }
+.ts-waterlily .ts-access-bar strong { font-size: 12px; font-weight: 550; color: #526950; }
+.ts-waterlily .ts-access-bar p { font-size: 11px; line-height: 1.65; color: #687768; margin: 0; }
+.ts-waterlily .ts-access-bar .ts-button { background: transparent; border: 0; box-shadow: none; min-height: 30px; font-size: 11px !important; padding: 4px 0; color: var(--ts-primary); }
+.ts-waterlily .ts-model-status-link { display: flex; align-items: center; gap: 6px; background: #eee6d9; border: 1px solid #e1d8c8; color: #795d42; font-size: 11px; border-radius: 6px; padding: 4px 8px; min-height: 30px; }
+.ts-waterlily .ts-status-dot { display: inline-block; width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; background: #ab886c; }
+.ts-waterlily .ts-status-dot.has-source { background: #64866e; }
+.ts-waterlily .ts-button { min-height: 38px; padding: 8px 13px; border-radius: 9px; border-color: #d6dfd2; background: var(--ts-paper); color: var(--ts-primary); font-size: 13px !important; font-weight: 550; transition: background 180ms, border-color 180ms, box-shadow 180ms, transform 180ms; }
+.ts-waterlily .ts-button:not(:disabled):hover { background: #f0f3e9; border-color: #adbfae; box-shadow: 0 3px 9px #355e5207; }
+.ts-waterlily .ts-button:not(:disabled):active { transform: translateY(1px); box-shadow: none; }
+.ts-waterlily .ts-button-primary { color: var(--ts-paper); background: var(--ts-primary); border-color: var(--ts-primary); box-shadow: 0 2px 5px #355e5214; }
+.ts-waterlily .ts-button-primary:not(:disabled):hover { color: #fffdf7; background: #294b40; border-color: #294b40; }
+.ts-waterlily .ts-button-quiet { background: transparent; border-color: transparent; box-shadow: none; }
+.ts-waterlily .ts-button-danger { color: #985142; border-color: #d9b7a5; }
+.ts-waterlily .ts-icon-button { width: 34px; height: 34px; color: #6e7f70; border-radius: 8px; }
+.ts-waterlily .ts-icon-button:hover { background: #e9eee3; color: var(--ts-primary); }
+.ts-waterlily .ts-panel { background: var(--ts-paper); border-color: var(--ts-line); border-radius: var(--ts-radius); box-shadow: var(--ts-shadow); overflow: hidden; }
+.ts-waterlily .ts-panel-header { padding: 20px 24px 16px; }
+.ts-waterlily .ts-panel-header h2 { color: var(--ts-ink); font-size: 17px; letter-spacing: -.2px; }
+.ts-waterlily .ts-panel-header h2 > span { color: var(--ts-primary); background: #e9eee4; font-variant-numeric: tabular-nums; border-radius: 5px; }
+.ts-waterlily .ts-panel-header p { color: var(--ts-muted); font-size: 12px; }
+.ts-waterlily .ts-stats-grid { gap: 16px; margin-bottom: 24px; }
+.ts-waterlily .ts-stat { background: var(--ts-paper); border-color: var(--ts-line); border-radius: 14px; padding: 18px 20px; box-shadow: var(--ts-shadow); transition: transform 180ms, box-shadow 180ms, border-color 180ms; }
+.ts-waterlily .ts-stat:hover { transform: translateY(-2px); border-color: #adc1ad; box-shadow: 0 6px 15px #355e5209; }
+.ts-waterlily .ts-stat.is-selected { background: #e8eee1; border-color: #a7bea7; box-shadow: inset 3px 0 0 var(--ts-primary); }
+.ts-waterlily .ts-stat-title { color: var(--ts-muted); font-size: 13px; }
+.ts-waterlily .ts-stat > strong { color: var(--ts-primary); font-weight: 550; font-size: 29px; font-variant-numeric: tabular-nums; }
+.ts-waterlily .ts-stat-caption { color: var(--ts-muted); font-size: 11px; }
+.ts-waterlily .ts-stat.is-attention .ts-stat-title, .ts-waterlily .ts-overdue-text { color: #9a6048; }
+.ts-waterlily .ts-table-toolbar { padding: 0 24px 16px; gap: 12px; flex-wrap: wrap; }
+.ts-waterlily .ts-search-field, .ts-waterlily .ts-toolbar-select, .ts-waterlily .ts-anchor-select { background: #fbfbf4; color: var(--ts-muted); border-color: var(--ts-line); border-radius: 8px; min-height: 39px; }
+.ts-waterlily .ts-search-field input, .ts-waterlily .ts-toolbar-select select, .ts-waterlily .ts-anchor-select select { color: var(--ts-ink); }
+.ts-waterlily .ts-customer-table { min-width: 880px; font-size: 13px; }
+.ts-waterlily .ts-customer-table th { background: #eff2e8; border-color: var(--ts-line); color: #5b6f5b; font-size: 11px; font-weight: 600; padding-top: 12px; padding-bottom: 12px; }
+.ts-waterlily .ts-customer-table td { border-color: #e7ebdf; padding-top: 17px; padding-bottom: 17px; color: var(--ts-ink); }
+.ts-waterlily .ts-customer-table tbody tr:hover { background: #f2f5eb; }
+.ts-waterlily .ts-customer-table tbody tr.is-selected { background: #e8efe3; }
+.ts-waterlily .ts-company-name { color: #2f4d3d; font-size: 14px; font-weight: 600; }
+.ts-waterlily .ts-company-meta, .ts-waterlily .ts-cell-note { color: var(--ts-muted); font-size: 11px; }
+.ts-waterlily .ts-company-evidence-status { display: flex; align-items: center; gap: 5px; font-size: 10px; color: #697b67; margin-top: 4px; }
+.ts-waterlily .ts-company-avatar { color: var(--ts-primary); background: #e6eddf; border-color: #d4dfce; border-radius: 13px; }
+.ts-waterlily .ts-company-avatar-small { border-radius: 9px; font-size: 12px; }
+.ts-waterlily .ts-demo-tag { background: #eee9f0; border-color: #d7cedd; color: #756980; font-size: 10px; }
+.ts-waterlily .ts-source-pill { background: #eef1e8; color: #536d55; border-color: #dce5d5; }
+.ts-waterlily .ts-stage { color: #65715d; background: #eff1e7; font-size: 11px; }
+.ts-waterlily .ts-grade { border-radius: 6px; font-size: 11px; }
+.ts-waterlily .ts-grade-A { background: #e5eedf; color: #355e45; }
+.ts-waterlily .ts-grade-B { background: #e8eef0; color: #4d6a72; }
+.ts-waterlily .ts-grade-C { background: #efe7dc; color: #86604b; }
+.ts-waterlily .ts-grade-unknown { background: #f0eee5; color: #746e59; }
+.ts-waterlily .ts-table-codes code, .ts-waterlily .ts-code-list code { background: #f1f3ea; color: #486345; border-color: #e0e6d6; font-size: 11px; }
+.ts-waterlily .ts-follow-cell strong { color: #465e48; font-size: 12px; }
+.ts-waterlily .ts-follow-cell > div { font-size: 11px; }
+.ts-waterlily .ts-table-footer { background: #fbfcf5; color: #6c7d68; border-color: var(--ts-line); font-size: 11px; }
+.ts-waterlily .ts-selection-bar { background: #edf1e5; color: var(--ts-primary); border-color: #d9e2d1; }
+.ts-waterlily .ts-empty { padding: 48px 24px; background: radial-gradient(ellipse at 50% 25%, #b5c8d51a, transparent 65%); }
+.ts-waterlily .ts-empty-compact { padding: 32px 24px; }
+.ts-waterlily .ts-empty-icon { color: var(--ts-primary); background: #eaf0e3; border-color: #dae3d4; border-radius: 18px 22px 18px 24px; }
+.ts-waterlily .ts-empty h3 { color: var(--ts-ink); font-weight: 600; }
+.ts-waterlily .ts-empty p { color: var(--ts-muted); font-size: 13px; max-width: 420px; }
+.ts-waterlily .ts-example-strip, .ts-waterlily .ts-info-box { background: #edf2e8; border-color: #d7e1d1; color: #526b51; }
+.ts-waterlily .ts-info-box p { color: #566b54; }
+.ts-waterlily .ts-saved-notice { border-color: #b9d0b7; background: #edf3e7; color: #3e6549; border-radius: 10px; }
+.ts-waterlily .ts-error-banner, .ts-waterlily .ts-inline-error { color: #96513d; background: #f8ece1; border-color: #e4c5af; border-radius: 10px; }
+.ts-waterlily .ts-modal-layer { background: #243b3152; backdrop-filter: blur(4px); }
+.ts-waterlily .ts-modal { background: var(--ts-paper); border-color: #d6dfcf; border-radius: 18px; box-shadow: 0 24px 80px #243d322b; animation: ts-panel-arrival 220ms ease-out both; }
+.ts-waterlily .ts-modal-header { padding: 22px 24px 18px; background: #f5f6ed; border-color: var(--ts-line); }
+.ts-waterlily .ts-modal-header h2 { font-size: 21px; color: var(--ts-ink); letter-spacing: -.3px; }
+.ts-waterlily .ts-modal-header p { color: var(--ts-muted); font-size: 12px; }
+.ts-waterlily .ts-modal-footer { background: var(--ts-paper); border-color: var(--ts-line); box-shadow: 0 -10px 14px #fffdf7e6; }
+.ts-waterlily .ts-form { padding: 24px 24px 0; }
+.ts-waterlily .ts-form-grid { gap: 16px; }
+.ts-waterlily .ts-form-grid > h3, .ts-waterlily .ts-form-section-title { grid-column: 1 / -1; font-size: 13px; font-weight: 600; color: var(--ts-primary); border-bottom: 1px solid var(--ts-line); padding-bottom: 8px; margin: 0; letter-spacing: .4px; }
+.ts-waterlily .ts-field { font-size: 13px; color: #50654f; min-width: 0; }
+.ts-waterlily .ts-field input, .ts-waterlily .ts-field select, .ts-waterlily .ts-field textarea { color: var(--ts-ink); background-color: #fffef9; border-color: #d6dfd1; border-radius: 8px; min-height: 41px; font-size: 14px; padding: 10px 11px; }
+.ts-waterlily .ts-field small, .ts-waterlily .ts-form-note { color: var(--ts-muted); font-size: 12px; line-height: 1.8; }
+.ts-waterlily .ts-field input::placeholder, .ts-waterlily .ts-field textarea::placeholder { color: #7d8a79; }
+.ts-waterlily .ts-change-review { background: #f0f3e7; border-color: #d6e0cc; border-radius: 12px; }
+.ts-waterlily .ts-change-review h3 { color: #426444; }
+.ts-waterlily .ts-import-tabs { background: #f6f6ee; border-color: var(--ts-line); }
+.ts-waterlily .ts-import-tabs button { color: var(--ts-muted); }
+.ts-waterlily .ts-import-tabs button.active { color: var(--ts-primary); border-color: var(--ts-primary); }
+.ts-waterlily .ts-dropzone { border-color: #b8cbb4; background: #f2f5ea; color: #557253; border-radius: 13px; }
+.ts-waterlily .ts-dropzone:hover { background: #eaf1e2; border-color: #6e936b; }
+.ts-waterlily .ts-drawer-layer { background: #243b312e; }
+.ts-waterlily .ts-drawer { width: min(620px, 100%); background: var(--ts-paper); border-left: 1px solid #d4dfcd; box-shadow: -16px 0 48px #243d3215; animation: ts-drawer-arrival 250ms ease-out both; }
+.ts-waterlily .ts-drawer-header, .ts-waterlily .ts-drawer-footer { background: #f1f4e9; border-color: var(--ts-line); }
+.ts-waterlily .ts-drawer-header > span, .ts-waterlily .ts-drawer-footer { color: #687e62; font-size: 11px; }
+.ts-waterlily .ts-drawer-identity h2 { color: var(--ts-ink); font-size: 23px; }
+.ts-waterlily .ts-drawer-tabs { border-color: var(--ts-line); gap: 24px; }
+.ts-waterlily .ts-drawer-tabs button { font-size: 13px; color: var(--ts-muted); }
+.ts-waterlily .ts-drawer-tabs button.active { color: var(--ts-primary); border-color: var(--ts-primary); }
+.ts-waterlily .ts-drawer-body { scrollbar-color: #c1ceba transparent; scrollbar-width: thin; }
+.ts-waterlily .ts-text-button, .ts-waterlily .ts-external { color: var(--ts-primary); }
+.ts-waterlily .ts-external:hover { text-decoration: underline; text-underline-offset: 3px; }
+.ts-waterlily .ts-section-heading h3, .ts-waterlily .ts-detail-section h3 { color: var(--ts-ink); }
+.ts-waterlily .ts-next-step, .ts-waterlily .ts-source-snapshot, .ts-waterlily .ts-contact-check { border-color: #dbe4d3; border-radius: 13px; background: #f5f6ed; }
+.ts-waterlily .ts-evidence-card { border-color: #dbe3d4; border-radius: 13px; background: #fffef9; }
+.ts-waterlily .ts-evidence-card blockquote, .ts-waterlily .ts-source-snapshot blockquote { background: #f4f5ec; border-color: #b7cbb2; color: #4e614b; }
+.ts-waterlily .ts-followup-summary > div, .ts-waterlily .ts-product-card, .ts-waterlily .ts-product-intro { background: var(--ts-paper); border-color: var(--ts-line); border-radius: 14px; box-shadow: var(--ts-shadow); }
+.ts-waterlily .ts-followup-list > button { border-color: var(--ts-line); }
+.ts-waterlily .ts-followup-list > button:hover { background: #f0f4e8; }
+.ts-waterlily .ts-due-box { background: #e8eee2; color: var(--ts-primary); }
+.ts-waterlily .ts-due-box.overdue { background: #f2e4d7; color: #946347; }
+.ts-waterlily .ts-task-item { border-color: var(--ts-line); }
+.ts-waterlily .ts-task-check { border-color: #a9bd9f; }
+.ts-waterlily .ts-task-item.is-done .ts-task-check { background: var(--ts-primary); }
+.ts-waterlily .ts-segmented { background: #ecefe4; border-color: #d6dfce; border-radius: 8px; }
+.ts-waterlily .ts-segmented button { color: var(--ts-muted); }
+.ts-waterlily .ts-segmented button.active { background: var(--ts-paper); color: var(--ts-primary); }
+.ts-waterlily .ts-settings-panel h2 { color: var(--ts-ink); }
+.ts-waterlily .ts-connection-icon { background: #edf1e5; color: var(--ts-primary); }
+.ts-waterlily .ts-connection-row { border-color: var(--ts-line); }
+.ts-waterlily .ts-connection-row strong { color: var(--ts-ink); }
+.ts-waterlily .ts-connection-row p { color: var(--ts-muted); }
+.ts-waterlily .ts-run-log { border-color: var(--ts-line); background: #f6f6ed; border-radius: 12px; }
+.ts-waterlily .ts-run-log > summary { color: var(--ts-muted); }
+.ts-waterlily .ts-run-log-list > div { border-color: var(--ts-line); }
+.ts-waterlily .ts-page-footer { border-color: var(--ts-line); color: #6e8066; font-size: 10px; letter-spacing: .3px; padding: 24px 1px 4px; }
+.ts-waterlily .ts-footer-ripple { font-size: 18px; margin-right: 7px; vertical-align: middle; color: #91aa86; }
+/* Existing sub-workspaces retain their states and logic; only the common skin changes. */
+.ts-waterlily .ts-iq-steps, .ts-waterlily .ts-iq-toolbar > label { border-color: var(--ts-line); background: var(--ts-paper); border-radius: 12px; }
+.ts-waterlily .ts-iq-steps > div.active { background: #eaf0e2; color: var(--ts-primary); }
+.ts-waterlily .ts-iq-section-head h2, .ts-waterlily .ts-iq-steps strong, .ts-waterlily .ts-iq-candidate h3 { color: var(--ts-ink); }
+.ts-waterlily .ts-iq-field > span { color: #536b51; }
+.ts-waterlily .ts-iq-field input, .ts-waterlily .ts-iq-field select, .ts-waterlily .ts-iq-field textarea { background-color: #fffef9; color: var(--ts-ink); border-color: #d8e0d1; border-radius: 8px; }
+.ts-waterlily .ts-iq-save-footer { background: #f3f5ea; border-color: var(--ts-line); }
+.ts-waterlily .ts-iq-stale-note { background: #f6eadd; border-color: #dfbda4; color: #8e5a40; }
+.ts-waterlily .ts-iq-example-label { background: #eee9f1; color: #776681; border-color: #dcd0e3; }
+.ts-waterlily .ts-iq-candidate { border-color: #d8e2cf; border-radius: 12px; background: #fffef9; }
+.ts-waterlily .ts-iq-next-question { background: #eef3e7; border-color: #cfdec4; color: var(--ts-primary); }
+.ts-waterlily .ts-iq-result-panel.is-stale .ts-iq-candidate { background: #f6f4ed; }
+@keyframes ts-water-arrival { from { opacity: 0; transform: scale(.88); } to { opacity: .2; transform: scale(1); } }
+@keyframes ts-panel-arrival { from { opacity: .5; transform: translateY(7px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes ts-drawer-arrival { from { opacity: .6; transform: translateX(18px); } to { opacity: 1; transform: translateX(0); } }
+@media (min-width: 1100px) and (max-width: 1450px) {
+  .ts-waterlily .ts-content { padding-left: 24px; padding-right: 24px; }
+  .ts-waterlily .ts-customer-table { min-width: 0; }
+}
+@media (max-width: 1099px) {
+  .ts-waterlily .ts-sidebar { width: 188px; padding-left: 12px; padding-right: 12px; }
+  .ts-waterlily .ts-main-shell { margin-left: 188px; }
+  .ts-waterlily .ts-content { padding: 24px; }
+  .ts-waterlily .ts-brand strong { font-size: 21px; letter-spacing: 1px; }
+  .ts-waterlily .ts-brand-icon { width: 38px; height: 44px; }
+  .ts-waterlily .ts-brand-tagline { font-size: 15px; }
+  .ts-waterlily .ts-title-line { gap: 6px 16px; }
+  .ts-waterlily .ts-workspace-status { gap: 10px; }
+}
+@media (max-width: 860px) {
+  .ts-waterlily .ts-sidebar { width: 216px; }
+  .ts-waterlily .ts-main-shell { margin-left: 0; }
+  .ts-waterlily .ts-topbar { padding: 0 20px; }
+  .ts-waterlily .ts-page-heading { flex-wrap: wrap; }
+  .ts-waterlily .ts-customer-table { min-width: 880px; }
+}
+@media (max-width: 600px) {
+  .ts-waterlily .ts-content { padding: 20px 16px 16px; }
+  .ts-waterlily .ts-topbar { height: 52px; padding: 0 14px; }
+  .ts-waterlily .ts-topbar-right { gap: 4px; }
+  .ts-waterlily .ts-sync-state { font-size: 10px; }
+  .ts-waterlily .ts-breadcrumb { gap: 6px; font-size: 11px; }
+  .ts-waterlily .ts-brand-heading { min-height: 105px; }
+  .ts-waterlily .ts-brand-heading h1 { font-size: 34px; }
+  .ts-waterlily .ts-brand-tagline { font-size: 13px; }
+  .ts-waterlily .ts-title-line { column-gap: 12px; }
+  .ts-waterlily .ts-page-heading p { font-size: 12px; }
+  .ts-waterlily .ts-eyebrow { font-size: 9px; }
+  .ts-waterlily .ts-brand-ripples { left: -24px; top: -20px; width: 360px; height: 140px; }
+  .ts-waterlily .ts-access-bar { flex: 1 1 100%; gap: 6px 8px; align-items: flex-start; }
+  .ts-waterlily .ts-access-bar > div { display: block; min-width: 0; flex: 1; }
+  .ts-waterlily .ts-access-bar > .ts-button, .ts-waterlily .ts-access-bar > .ts-access-link { margin: 0; min-height: 30px; }
+  .ts-waterlily .ts-access-bar p { font-size: 10px; }
+  .ts-waterlily .ts-model-status-link { margin-left: 23px; font-size: 10px; min-height: 28px; }
+  .ts-waterlily .ts-workspace-status { margin-bottom: 16px; gap: 7px; }
+  .ts-waterlily .ts-heading-actions { flex-wrap: wrap; gap: 8px; }
+  .ts-waterlily .ts-stats-grid { gap: 10px; margin-bottom: 16px; }
+  .ts-waterlily .ts-stat { padding: 14px 16px; }
+  .ts-waterlily .ts-stat-caption { font-size: 10px; }
+  .ts-waterlily .ts-panel-header { padding: 18px 16px 14px; align-items: flex-start; }
+  .ts-waterlily .ts-panel-header h2 { font-size: 16px; }
+  .ts-waterlily .ts-customer-entry-actions { gap: 4px; flex-wrap: wrap; }
+  .ts-waterlily .ts-customer-entry-actions .ts-button { font-size: 11px !important; }
+  .ts-waterlily .ts-table-toolbar { padding: 0 16px 14px; gap: 8px; }
+  .ts-waterlily .ts-toolbar-select, .ts-waterlily .ts-anchor-select { flex: 1; min-width: 0; }
+  .ts-waterlily .ts-anchor-select select { min-width: 0; }
+  .ts-waterlily .ts-table-scroll { border: 0; overflow: visible; }
+  .ts-waterlily .ts-customer-table { display: block; min-width: 0; width: 100%; }
+  .ts-waterlily .ts-customer-table thead { display: none; }
+  .ts-waterlily .ts-customer-table tbody { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; padding: 0 12px 12px; }
+  .ts-waterlily .ts-customer-table tbody tr { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); position: relative; gap: 8px 12px; padding: 16px; border: 1px solid var(--ts-line); background: #fffef9; border-radius: 12px; }
+  .ts-waterlily .ts-customer-table td { display: block; border: 0; padding: 0; min-width: 0; }
+  .ts-waterlily .ts-customer-table td::before { display: block; content: attr(data-label); font-size: 10px; color: #74816e; margin-bottom: 4px; }
+  .ts-waterlily .ts-customer-table td[data-label="企业 / 市场"], .ts-waterlily .ts-customer-table td[data-label="下一步与跟进"] { grid-column: 1 / -1; }
+  .ts-waterlily .ts-customer-table td[data-label="企业 / 市场"] { padding-right: 20px; padding-bottom: 10px; border-bottom: 1px solid var(--ts-line); }
+  .ts-waterlily .ts-customer-table td[data-label="企业 / 市场"]::before { display: none; }
+  .ts-waterlily .ts-customer-table .ts-check-cell { position: absolute; right: 16px; top: 19px; padding: 0; }
+  .ts-waterlily .ts-customer-table .ts-row-arrow { display: none; }
+  .ts-waterlily .ts-company-name { font-size: 15px; }
+  .ts-waterlily .ts-table-footer { flex-wrap: wrap; gap: 6px; padding: 12px 16px; }
+  .ts-waterlily .ts-table-footer > span { white-space: normal; }
+  .ts-waterlily .ts-selection-bar { flex-wrap: wrap; gap: 8px; }
+  .ts-waterlily .ts-modal-layer { padding: 8px; }
+  .ts-waterlily .ts-modal { max-height: 96dvh; border-radius: 14px; }
+  .ts-waterlily .ts-modal-header { padding: 18px 16px 15px; }
+  .ts-waterlily .ts-modal-header h2 { font-size: 19px; }
+  .ts-waterlily .ts-form { padding: 18px 16px 0; }
+  .ts-waterlily .ts-form-grid { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .ts-waterlily .ts-field input, .ts-waterlily .ts-field select, .ts-waterlily .ts-field textarea { font-size: 16px; }
+  .ts-waterlily .ts-drawer { width: 100%; border-left: 0; }
+  .ts-waterlily .ts-drawer-tools { flex-wrap: wrap; gap: 8px; }
+  .ts-waterlily .ts-drawer-tabs { gap: 0; justify-content: space-between; }
+  .ts-waterlily .ts-drawer-tabs button { font-size: 12px; }
+  .ts-waterlily .ts-drawer-body { padding: 18px 16px 24px; }
+  .ts-waterlily .ts-drawer-footer { font-size: 10px; }
+  .ts-waterlily .ts-page-footer { flex-wrap: wrap; gap: 6px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ts-waterlily *, .ts-waterlily *::before, .ts-waterlily *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .ts-waterlily .ts-brand-ripples { opacity: .2; }
+}

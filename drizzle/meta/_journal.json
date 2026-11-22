@@ -1,0 +1,20 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1795244706801,
+      "tag": "0000_shallow_inertia",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1795272952577,
+      "tag": "0001_tavily_search_config",
+      "breakpoints": true
+    }
+  ]
+}

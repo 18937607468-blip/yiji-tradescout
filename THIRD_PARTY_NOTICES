@@ -1,0 +1,18 @@
+The earlier local project was based on firecrawl/fire-enrich.
+Upstream: https://github.com/firecrawl/fire-enrich
+Upstream commit: 4ce8ba2fcf8a65578208e2caa729b47bca0ab5ac
+MIT notice is preserved in LICENSE. The team does not claim upstream authorship.
+
+This hosted adaptation uses the Sites Vinext starter, its existing framework,
+authentication helpers and runtime build integration. Their existing notices
+and dependency licenses remain applicable. Application-specific additions are
+Guanying B2B workflows, evidence tracking, inquiry memory, HS search conditions,
+D1 workspace isolation, encrypted per-account model configuration, and demo UI.
+No Firecrawl paid API or upstream lead results are represented as connected here.
+
+Vendored notices are retained in scripts/vite/sites-vite-plugin.LICENSE and
+vendor/shadcn-tailwind-4.13.0.LICENSE.md. npm dependency licenses remain with
+their packages. Public product/reference sources are identified in application
+records. Public reference examples are not customer transaction data.
+The screenshots added for publication show this application running locally
+with an empty or explicitly synthetic workspace.
