@@ -1,5 +1,7 @@
 # 投石问路 / 冠英 TradeScout
 
+[![Verify TradeScout](https://github.com/18937607468-blip/yiji-tradescout/actions/workflows/ci.yml/badge.svg)](https://github.com/18937607468-blip/yiji-tradescout/actions/workflows/ci.yml)
+
 **把公开企业线索变成有来源、可确认、可持续跟进的商用车制动件客户记录。**
 
 壹击队 · INTERCITY HACK 湖州站 · AI+GTM。保留当前莫奈水色界面、全部业务路由、Vinext/React 与 Cloudflare D1 架构。
